@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">article</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    
+    
+   <!--  测试高德画线 -->
+     <string name="properties_polyline">设置Polyline属性</string>
+    <string name="properties_polygon">设置Polygon属性</string>
+    <string name="properties_circle">设置Circle属性</string>
+     <string name="fill_stroke">Fill Stroke</string>
+    <string name="fill_color">Fill Color</string>
+    <string name="stroke_width">Stroke Width</string>
+
+</resources>
