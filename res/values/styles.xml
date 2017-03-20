@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -25,6 +25,15 @@
         <item name="android:layout_weight">1</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
+    </style>
+    <style name="title_style_text" comment="窗口上的顶标题">
+      	<item name="android:layout_width">match_parent</item>
+      	<item name="android:layout_height">wrap_content</item>
+      	<item name="android:gravity">center</item>
+      	<item name="android:padding">8dp</item>
+      	<item name="android:background">@color/blue</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>

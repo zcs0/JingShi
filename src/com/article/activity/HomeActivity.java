@@ -55,6 +55,10 @@ public class HomeActivity extends BaseActivity {
 		viewPager.setCurrentItem(0);// 设置当前显示标签页为第一页
 		viewPager.setOnPageChangeListener(new MyOnPageChangeListener());//滑动
 		viewPager.setOffscreenPageLimit(3);
+		
+//		InputMethodManager im = (InputMethodManager) getSystemService(Service.INPUT_METHOD_SERVICE);
+//		SoftKeyboard softKeyboard;
+//		softKeyboard = new SoftKeyboard(mainLayout, im);
 	}
 
 	// 下导航栏点击事件
@@ -129,13 +133,11 @@ public class HomeActivity extends BaseActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		proFragment.onRunPause();
 		
 	}
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		proFragment.onRunDestory();
 	}
 
 }
