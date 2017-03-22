@@ -30,7 +30,7 @@ import com.z.utils.LogUtils;
 public class LineChartActivity extends BaseActivity {
 	private LineChartView chart;
 	private LineChartData data;
-
+	List<Line> lines = new ArrayList<Line>();//保存线的个数
 	private boolean hasAxes = true;
 	private boolean hasAxesNames = true;
 	private boolean hasLines = true;
@@ -61,7 +61,6 @@ public class LineChartActivity extends BaseActivity {
 	};
 	protected void onCreateView(Bundle savedInstanceState) {
 		createView(R.layout.fragment_line_chart);
-
 		chart = (LineChartView) findViewById(R.id.chart);
 		chart.setOnValueTouchListener(new ValueTouchListener());
 
@@ -85,8 +84,7 @@ public class LineChartActivity extends BaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-				chart.setLineChartData(null);//清除原有的
-				lines.clear();
+				resetViewport();
 				String url = SystemConstants.getUrl(true, SystemConstants.vibrate_url),dev ="1001";
 				runDrawStarPoint(url,dev);
 				
@@ -105,18 +103,22 @@ public class LineChartActivity extends BaseActivity {
 		strList.add("35,35");
 		strList.add("40,30");
 		List<String> strList2 = new ArrayList<String>();
-		strList.add("0,0");
-		strList.add("10,-15");
-		strList.add("20,-10");
-		strList.add("25,-25");
-		strList.add("30,-10");
-		strList.add("35,-35");
-		strList.add("40,30");
+		strList2.add("0,0");
+		strList2.add("10,-15");
+		strList2.add("20,-10");
+		strList2.add("25,-25");
+		strList2.add("30,-10");
+		strList2.add("35,-35");
+		strList2.add("40,-30");
 		createLine(strList, Color.RED);
-		createLine(strList2, Color.BLUE);
-		data.setBaseValue(Float.NEGATIVE_INFINITY);
-		chart.setLineChartData(data);
+		createLine(strList2, Color.RED);
+//		data.setBaseValue(Float.NEGATIVE_INFINITY);
+//		chart.setLineChartData(data);
+//		createLine(strList2, Color.BLUE);
+//		data.setBaseValue(Float.NEGATIVE_INFINITY);
+//		chart.setLineChartData(data);
 	};
+	
 	private void drawLine(List<List<String>> strList){
 		int i=0;
 		for (List<String> list : strList) {
@@ -125,7 +127,7 @@ public class LineChartActivity extends BaseActivity {
 		data.setBaseValue(Float.NEGATIVE_INFINITY);
 		chart.setLineChartData(data);
 	}
-	List<Line> lines = new ArrayList<Line>();
+	
 	private void createLine(List<String> strList,int color) {//[0.0,3.1257]
 		
 		List<PointValue> values = new ArrayList<PointValue>();
@@ -138,6 +140,7 @@ public class LineChartActivity extends BaseActivity {
 			}
 		}
 		Line line = new Line(values);
+		//设置线的属性
 		line.setColor(color).setShape(shape).setCubic(isCubic).setFilled(isFilled).
 			setHasLabels(hasLabels).setHasLabelsOnlyForSelected(hasLabelForSelected).
 			setHasLines(hasLines).setHasPoints(hasPoints).setHasGradientToTransparent(hasGradientToTransparent);
@@ -147,7 +150,7 @@ public class LineChartActivity extends BaseActivity {
 			// line.setPointColor(ChartUtils.COLORS[(i + 1) %
 			// ChartUtils.COLORS.length]);
 		}
-		lines.add(line);
+		lines.add(line);//添加一组线
 		data = new LineChartData(lines);
 		if (hasAxes) {
 			Axis axisX = new Axis();
@@ -162,7 +165,8 @@ public class LineChartActivity extends BaseActivity {
 			data.setAxisXBottom(null);
 			data.setAxisYLeft(null);
 		}
-		
+		data.setBaseValue(Float.NEGATIVE_INFINITY);
+		chart.setLineChartData(data);
 	};
 
 	/**
@@ -170,13 +174,15 @@ public class LineChartActivity extends BaseActivity {
 	 */
 	private void resetViewport() {
 		// Reset viewport height range to (0,100)
-		final Viewport v = new Viewport(chart.getMaximumViewport());// 设置最大最小值
-		v.bottom = -55;
-		v.top = 55;
-		v.left = -3f;
-		v.right = 45f;
-		chart.setMaximumViewport(v);
+		Viewport v = new Viewport(chart.getMaximumViewport());// 设置最大最小值
+		v.bottom = -65;//底部
+		v.top = 65;//顶部
+		v.left = -3f;//左
+		v.right = 45f;//右
+		chart.setMaximumViewport(v);//设置最大窗口
 		chart.setCurrentViewport(v);
+		lines.clear();//清除已添加的线
+		chart.setLineChartData(null);//清除所显示的线
 	}
 
 	private void prepareDataAnimation() {

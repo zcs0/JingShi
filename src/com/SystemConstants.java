@@ -8,7 +8,7 @@ package com;
  */
 public class SystemConstants {
 	public static int handlerMessageBasis = 10;//handler what基本值++
-	private static final String host="192.168.0.141:8001/";
+	private static final String host="192.168.0.129:8001/";
 	private static final String http="http://";
 	//事实货物震动信息
 	public static final String vibrate_url = "EmfcRciWeb/MobileCtrl/vibrateDemo";
