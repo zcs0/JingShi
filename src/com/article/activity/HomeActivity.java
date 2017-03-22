@@ -42,6 +42,8 @@ public class HomeActivity extends BaseActivity {
 		Fragment msgFragment = new MessageFragment();
 		Fragment bindFragment = new BindFragment();
 		Fragment perFragment = new PersonalFragment();
+//		DefaultChartFragment defaultChartFragment = new DefaultChartFragment();
+//		fragments.add(defaultChartFragment);
 		fragments.add(proFragment);
 		fragments.add(msgFragment);
 		fragments.add(bindFragment);

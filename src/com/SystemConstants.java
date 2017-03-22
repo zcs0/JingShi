@@ -8,8 +8,12 @@ package com;
  */
 public class SystemConstants {
 	public static int handlerMessageBasis = 10;//handler what基本值++
-	private static final String host="host";
+	private static final String host="192.168.0.141:8001/";
 	private static final String http="http://";
+	//事实货物震动信息
+	public static final String vibrate_url = "EmfcRciWeb/MobileCtrl/vibrateDemo";
+	//事实货物车辆信息
+	public static final String car_position = "/EmfcRciWeb/MobileCtrl/findRealtimeDatan";
 	//用户登录接口
 	public static final String userLogin = "/userLogin";
 	//极光推送ID注册
@@ -60,6 +64,7 @@ public class SystemConstants {
 	
 	public static String getUrl(boolean isdebug,String url){
 		if(isdebug){//如果是测试版
+			//http://192.168.0.141:8001/EmfcRciWeb/MobileCtrl/vibrateDemo
 			return http + host + url;
 		}else{
 			

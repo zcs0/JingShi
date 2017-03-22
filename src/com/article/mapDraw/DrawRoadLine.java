@@ -48,6 +48,7 @@ import com.z.utils.TimerUtil;
  */
 public class DrawRoadLine implements OnMarkerClickListener, InfoWindowAdapter {
 	private final int ROAD_HANDLER = ++SystemConstants.handlerMessageBasis;
+	
 	private AMap aMap;
 	Context mContext;
 	long time;
@@ -104,7 +105,6 @@ public class DrawRoadLine implements OnMarkerClickListener, InfoWindowAdapter {
 				addPolylinesWithColors(info);
 				if(httpRequestThread!=null){
 					TimerUtil.getInstance().schedule(new TimerTask() {
-						
 						@Override
 						public void run() {
 							new Thread(httpRequestThread).start();
@@ -176,6 +176,7 @@ public class DrawRoadLine implements OnMarkerClickListener, InfoWindowAdapter {
 		}
 
 	}
+	
 	/**
 	 * 多段颜色（非渐变色）
 	 */

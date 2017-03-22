@@ -90,8 +90,9 @@ public class ProjectLocationMapActivity extends Activity implements LocationSour
 		addPolylineInPlayGround(new LatLng(39.904715, 116.443268));
 		addPolylinesWithGradientColors();
 		drawRoadLine = new DrawRoadLine(aMap, this, 3000);
-		String url="http://192.168.0.146:8001/EmfcRciWeb/MobileCtrl/findRealtimeData",devId="1001";
+		String url="http://192.168.0.14:8001/EmfcRciWeb/MobileCtrl/findRealtimeData",devId="1001";
 		drawRoadLine.runDrawStar(url,devId);
+		
 		
 	}
 	

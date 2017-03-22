@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.article.BaseMain;
+import com.article.dialog.EProgressDialogs;
+import com.article.dialog.EProgressDialogs.EvenDialog;
 import com.z.netUtil.HttpRequest;
 import com.z.netUtil.HttpResponse;
 import com.z.netUtil.HttpUtils;
@@ -22,18 +24,20 @@ import com.z.netUtil.HttpUtils;
 public abstract class BaseActivity extends FragmentActivity implements BaseMain,
 		OnClickListener {
 
+	private EProgressDialogs dialog;
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
+		
 		if (arg0 == null) {
 			onCreateView(arg0);
 		}
-
 	}
 
-	public abstract void onCreateView(Bundle savedInstanceState);
+	protected abstract void onCreateView(Bundle savedInstanceState);
 
 	public int createView(int layoutResID) {
+		dialog= new EProgressDialogs(this);
 		createView(View.inflate(this, layoutResID, null));
 		return layoutResID;
 	}
@@ -212,6 +216,23 @@ public abstract class BaseActivity extends FragmentActivity implements BaseMain,
 	 */
 	public HttpResponse httpPost(String url){
 		return HttpUtils.httpPost(url);
+	}
+	/**
+	 * 显示加载等待
+	 * @param message
+	 */
+	protected void showLoadingDialog(String... message){
+		dialog.even = EvenDialog.style2;//显示的样式
+		if(message!=null&&message.length>0){
+			dialog.setMessage(message[0]);
+		}
+		dialog.show();
+	}
+	/**
+	 * 关闭加载等待
+	 */
+	protected void dismissLoadingDialog(){
+		dialog.dismiss();
 	}
 
 }

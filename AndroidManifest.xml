@@ -43,6 +43,7 @@
 	<!-- 高德定位-->
         <service android:name="com.amap.api.location.APSService" />
         <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name="com.article.activity.LineChartActivity"></activity>
         <!-- <activity android:name="com.article.activity.HomeActivity"></activity> -->
     </application>
     

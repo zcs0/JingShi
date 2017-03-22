@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:lines="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+<!-- 
+    <com.polonium.linechart.LineChartView
+        lines:horizontal_grid_step="5"
+        lines:horizontal_grid_sublines_count="0"
+		lines:vertical_grid_sublines_count="0"
+		lines:vertical_grid="true"
+		lines:vertical_grid_sublines="true"
+		lines:horizontal_grid="true"
+		lines:horizontal_grid_sublines="true"
+		lines:horizontal_grid_color="#ff0000"
+		lines:vertical_grid_color="#00ff00"
+        lines:horizontal_grid_sublines_color="#0000ff"
+		lines:vertical_grid_sublines_color="#0ff000"
+		lines:horizontal_grid_thikness="0dp"
+		lines:vertical_grid_thikness="5dp"
+		lines:horizontal_grid_sublines_thikness="5dp"
+		lines:vertical_grid_sublines_thikness="5dp"
+		lines:horizontal_values="true"
+		lines:vertical_values="true"
+		lines:horizontal_values_color="#000ff0"
+		lines:vertical_values_color="#f0f000"
+		lines:horizontal_values_size="15sp"
+		lines:vertical_values_size="15sp"
+        
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.polonium.linechart.LineChartView>
+ -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:text="TextView" />
+
+</LinearLayout>

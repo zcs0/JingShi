@@ -15,6 +15,12 @@
         android:gravity="center_vertical"
         android:drawableLeft="@drawable/amap_bus"
         />
+    <Button 
+        android:id="@+id/btn_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="树状图"
+        />
     <com.x.listview.XListView
         
         android:id="@+id/xListView"

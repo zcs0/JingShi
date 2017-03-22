@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.article.R;
+import com.article.activity.LineChartActivity;
 import com.article.activity.ProjectLocationMapActivity;
 import com.article.activity.SearchActivity;
 import com.x.listview.XListView;
@@ -69,6 +70,15 @@ public class ProjectFragment extends BaseFragment implements IXListViewListener{
 				
 			}
 		});
+		View btn = findViewById(R.id.btn_click);
+		btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getActivity(), LineChartActivity.class));
+				
+			}
+		});;
 //		editText = (EditText) view.findViewById(R.id.editText);
 //		txtSearch.setOnFocusChangeListener(new View.OnFocusChangeListener()
 //		{
