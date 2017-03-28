@@ -1,32 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="25dp"
-        android:gravity="right"
-        android:text="创建时间：******" />
+    <include android:id="@+id/ll_top" layout="@layout/adapter_item_pub" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试：******" />
-    </LinearLayout>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="25dp"
-        android:gravity="right"
-        android:text="预计到达时间" />
+        android:layout_below="@id/ll_top"
+        android:orientation="horizontal"
+        android:paddingTop="5dp" >
 
-</LinearLayout>
+        <LinearLayout style="@style/home_itme_ll_style" >
+
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="跌落事件" />
+
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="2起" />
+
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="开箱事件" />
+
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="6起" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/home_itme_ll_style" >
+
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="冲击事件" />
+
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="2起" />
+
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="湿温度事件" />
+
+            <TextView
+               style="@style/home_itme_txt_title_style"
+                android:text="6起" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/home_itme_ll_style" >
+
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="振动事件" />
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="2起" />
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="违规停车" />
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="00:02:00" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/home_itme_ll_style" >
+            <TextView
+               style="@style/home_itme_txt_title_style"
+                android:text="抛物事件" />
+            <TextView
+                style="@style/home_itme_txt_title_style"
+                android:text="6起" />
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="偏离路线" />
+            <TextView
+                 style="@style/home_itme_txt_title_style"
+                android:text="6公里" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

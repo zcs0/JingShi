@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="16" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -29,7 +29,7 @@
             android:value="6163d9f7545582d330790a72ee50dde1" />
             <!-- android:windowSoftInputMode="stateHidden|stateAlwaysHidden" -->
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.HomeActivity"></activity>
+        <activity android:name=".activity.ArticleInfoActivity"></activity>
         <activity android:name=".activity.ProjectLocationMapActivity"></activity>
         <activity android:name=".activity.SearchActivity" android:windowSoftInputMode="stateVisible"></activity>
 	<!-- 定位需要的服务 使用2.0的定位需要加上这个 -->

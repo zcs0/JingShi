@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <android.support.v4.view.ViewPager
+    <com.article.view.CViewPager
         android:id="@+id/home_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1" >
-    </android.support.v4.view.ViewPager>
+    </com.article.view.CViewPager>
 
     <RadioGroup
         android:id="@+id/rg_bottom"
@@ -20,7 +20,7 @@
         <RadioButton
             android:id="@+id/rb_bottom01"
             style="@style/bottom_menu"
-            android:text="项目" />
+            android:text="首页" />
 
         <TextView
             android:layout_width="1dp"
@@ -30,7 +30,7 @@
         <RadioButton
             android:id="@+id/rb_bottom02"
             style="@style/bottom_menu"
-            android:text="消息" />
+            android:text="货物绑定" />
 
         <TextView
             android:layout_width="1dp"
@@ -40,17 +40,9 @@
         <RadioButton
             android:id="@+id/rb_bottom03"
             style="@style/bottom_menu"
-            android:text="绑定" />
+            android:text="个人中心" />
 
-        <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-             />
-
-        <RadioButton
-            android:id="@+id/rb_bottom04"
-            style="@style/bottom_menu"
-            android:text="个人" />
+        
     </RadioGroup>
 
 </LinearLayout>

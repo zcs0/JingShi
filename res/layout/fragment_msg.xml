@@ -8,11 +8,17 @@
         style="@style/title_style_text"
         android:text="消息"
         />
-    <com.x.listview.XListView
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/xListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- <com.x.listview.XListView
         android:id="@+id/xListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        /> -->
     
 
 </LinearLayout>

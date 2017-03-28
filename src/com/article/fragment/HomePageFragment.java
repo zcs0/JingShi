@@ -1,5 +1,6 @@
 package com.article.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 
 import com.article.R;
+import com.article.activity.ArticleInfoActivity;
 import com.x.listview.XListView;
 import com.x.listview.XListView.IXListViewListener;
 import com.z.utils.LogUtils;
@@ -20,7 +22,7 @@ import com.z.utils.LogUtils;
  * @Date           2017年3月20日 上午10:06:36 
  * @Description:   绑定
  */
-public class BindFragment extends BaseFragment implements IXListViewListener{
+public class HomePageFragment extends BaseFragment implements IXListViewListener{
 	private XListView mListView;
 	private ProjectAdapter adapter;
 	private String TAG="BindFragment";
@@ -38,15 +40,16 @@ public class BindFragment extends BaseFragment implements IXListViewListener{
 //		mAdapter = new ProjectAdapter();
 		adapter = new ProjectAdapter();;
 		mListView.setAdapter(adapter);;
-//		mListView.setPullLoadEnable(false);//是否启用加载
-//		mListView.setPullRefreshEnable(false);//是否启用刷新
-		mListView.setXListViewListener(this);//设置刷新监听
+		mListView.setPullLoadEnable(false);//是否启用加载
+		mListView.setPullRefreshEnable(false);//是否启用刷新
+//		mListView.setXListViewListener(this);//设置刷新监听
 		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 //				startActivity(new Intent(getActivity(), ProjectLocationMapActivity.class));
+				startActivity(new Intent(getActivity(), ArticleInfoActivity.class));
 				
 			}
 		});
@@ -57,7 +60,7 @@ public class BindFragment extends BaseFragment implements IXListViewListener{
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return 50;
+			return 1;
 		}
 
 		@Override

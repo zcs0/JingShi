@@ -5,9 +5,38 @@
     android:orientation="vertical" >
     <TextView 
         style="@style/title_style_text"
-        android:text="项目"
+        android:text="当前项目"
         />
+    <RadioGroup 
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RadioButton 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="货物类型"
+            
+            />
+         <RadioButton 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="创建时间"
+            
+            />
+         <RadioButton 
+           android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="货损警告等级"
+            
+            />
+        
+    </RadioGroup>
     <TextView 
+        android:visibility="gone"
         android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,16 +45,15 @@
         android:drawableLeft="@drawable/amap_bus"
         />
     <Button 
+        android:visibility="gone"
         android:id="@+id/btn_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="树状图"
+        android:text="震动树状图"
         />
-    <com.x.listview.XListView
-        
-        android:id="@+id/xListView"
+   <com.article.view.ListViewCompat
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

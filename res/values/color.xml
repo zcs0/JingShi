@@ -297,5 +297,6 @@
     <color name="transparent">#0000</color>
     <!-- 透明 -->
     <color name="transparent2">#8000</color>
+    <color name="main_red">#ffcc3131</color>
    
 </resources>

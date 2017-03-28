@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     <TextView 
         style="@style/title_style_text"
-        android:text="绑定"
+        android:text="今天动态"
         />
 	<com.x.listview.XListView
         android:id="@+id/xListView"

@@ -3,6 +3,7 @@ package com.article.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -170,5 +171,9 @@ public abstract class BaseFragment extends Fragment implements
 	}
 	public <T extends View> T findViewById(int layoutId) {
 		return (T) view.findViewById(layoutId);
+	}
+	protected int dp2px(int dp) {
+		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+				getResources().getDisplayMetrics());
 	}
 }

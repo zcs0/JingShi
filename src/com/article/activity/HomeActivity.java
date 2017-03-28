@@ -12,10 +12,11 @@ import android.widget.RadioGroup;
 
 import com.article.R;
 import com.article.adapter.PagerAdapter;
-import com.article.fragment.BindFragment;
+import com.article.fragment.DeviceBindFragment;
+import com.article.fragment.DynamicFragment;
+import com.article.fragment.HomePageFragment;
 import com.article.fragment.MessageFragment;
 import com.article.fragment.PersonalFragment;
-import com.article.fragment.ProjectFragment;
 
 /**
  * @ClassName: Text.java
@@ -30,7 +31,7 @@ public class HomeActivity extends BaseActivity {
 	private RadioGroup rg_botton;
 	private ViewPager viewPager;
 	int currentIndex;
-	private ProjectFragment proFragment;
+	private DynamicFragment proFragment;
 	@Override
 	public void onCreateView(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -38,16 +39,27 @@ public class HomeActivity extends BaseActivity {
 		viewPager = (ViewPager) getView(R.id.home_viewpager);
 		rg_botton = getView(R.id.rg_bottom);
 		List<Fragment> fragments = new ArrayList<Fragment>();
-		proFragment = new ProjectFragment();
+		proFragment = new DynamicFragment();
 		Fragment msgFragment = new MessageFragment();
-		Fragment bindFragment = new BindFragment();
+		DeviceBindFragment deviceBindFragment = new DeviceBindFragment();
+//		Fragment bindFragment = new BindFragment();
+		Fragment homePage = new HomePageFragment();
 		Fragment perFragment = new PersonalFragment();
+//		SimpleFragment simpleFragment = new SimpleFragment();
+//		DeleteListViewMainActivity TestFragment = new DeleteListViewMainActivity();
+//		MainFragment f = new MainFragment();
 //		DefaultChartFragment defaultChartFragment = new DefaultChartFragment();
-//		fragments.add(defaultChartFragment);
-		fragments.add(proFragment);
-		fragments.add(msgFragment);
-		fragments.add(bindFragment);
+//		fragments.add(f);
+		fragments.add(homePage);
+		fragments.add(deviceBindFragment);
 		fragments.add(perFragment);
+//		fragments.add(msgFragment);
+//		fragments.add(TestFragment);
+//		fragments.add(proFragment);
+//		fragments.add(simpleFragment);
+//		fragments.add(msgFragment);
+//		fragments.add(bindFragment);
+//		fragments.add(perFragment);
 		viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(),fragments));
 		((RadioButton) rg_botton.getChildAt(0)).setChecked(true);// 选中第一个
 		// 下方按钮点击事件
@@ -78,9 +90,9 @@ public class HomeActivity extends BaseActivity {
 			case R.id.rb_bottom03:
 				viewPager.setCurrentItem(2);
 				break;
-			case R.id.rb_bottom04:
-				viewPager.setCurrentItem(3);
-				break;
+//			case R.id.rb_bottom04:
+//				viewPager.setCurrentItem(3);
+//				break;
 			default:
 				viewPager.setCurrentItem(0);
 				break;

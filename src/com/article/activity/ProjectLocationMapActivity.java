@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.SystemConstants;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -90,7 +91,7 @@ public class ProjectLocationMapActivity extends Activity implements LocationSour
 		addPolylineInPlayGround(new LatLng(39.904715, 116.443268));
 		addPolylinesWithGradientColors();
 		drawRoadLine = new DrawRoadLine(aMap, this, 3000);
-		String url="http://192.168.0.14:8001/EmfcRciWeb/MobileCtrl/findRealtimeData",devId="1001";
+		String url=SystemConstants.getUrl(true, SystemConstants.car_position),devId="1001";
 		drawRoadLine.runDrawStar(url,devId);
 		
 		
